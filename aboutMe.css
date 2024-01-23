@@ -1,0 +1,28 @@
+*{
+    background-color:rgba(21, 33, 39, 1) ;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: rgba(21, 33, 39, 1);
+    display: grid;
+    max-width: 800px;
+    min-height: 500px;
+    margin-inline: auto ;
+}
+
+.about-me-box {
+    color: rgba(0, 255, 163, 0.45);
+    background-color:rgba(21, 33, 39, 1) ;
+    min-width: 100px;
+    min-height: 100px;
+    font-size: larger;
+}
+
+
+
+
+
