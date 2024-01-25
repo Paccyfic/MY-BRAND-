@@ -1,5 +1,5 @@
 *{
-    background-color:rgba(21, 33, 39, 1) ;
+    background-color: rgba(21, 33, 39, 1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,20 +7,334 @@
 }
 
 .container {
-    background-color: rgba(21, 33, 39, 1);
     display: grid;
-    max-width: 800px;
-    min-height: 500px;
-    margin-inline: auto ;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr 2fr);
+    min-height: 400px;
+    grid-auto-rows: minmax(150px, auto);
 }
+
+
+/* page's title */
 
 .about-me-box {
     color: rgba(0, 255, 163, 0.45);
-    background-color:rgba(21, 33, 39, 1) ;
-    min-width: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100px;
-    font-size: larger;
+    min-width: 100px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    
 }
+.about-txt {
+    font-size: 51px; 
+}
+
+
+/* experience boxes */
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr 1fr);
+    background-color: transparent;
+    gap: 2rem;
+    padding-left: 80px;
+    margin-top: 30px;
+    margin-left: 20px;
+
+}
+.experience {
+    height: 140px;
+    width: 140px;
+    background-color: rgba(0, 24, 35, 1);
+    grid-column-start: 2;
+    grid-column-end: 3;
+   
+    border-radius: 10%;
+    border-color: rgba(0, 255, 163, 1);
+    border-style: solid;
+    
+    /* justify-content: center;
+    align-items: center;
+    display: flex; */
+    
+
+}
+.five {
+    background-color: transparent;
+    font-size: 55px;
+    color: rgba(0, 255, 163, 1);
+    margin-top: 10px;
+    margin-left: 30px;
+}
+.line {
+    border-style: solid;
+    width: 80px;
+    margin-left: 29px;
+    background-color: transparent;
+    color: rgba(0, 255, 163, 1);
+}
+.experience-txt {
+    background-color: transparent;
+    font-size: small;
+    margin-left: 23px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+
+.projects {
+    height: 140px;
+    width: 140px;
+    background-color: rgba(0, 24, 35, 1);
+    color: aliceblue;
+    
+    border-radius: 10%;
+    border-color: rgba(0, 255, 163, 1);
+    border-style: solid;
+}
+.pj-number {
+    background-color: transparent;
+    font-size: 55px;
+    color: rgba(0, 255, 163, 1);
+    margin-top: 10px;
+    margin-left: 0px;
+}
+.projects-txt {
+    background-color: transparent;
+    font-size: small;
+    margin-left: 23px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 1);
+}
+
+
+
+.customers {
+    height: 140px;
+    width: 140px;
+    background-color: rgba(0, 24, 35, 1);
+    color: aliceblue;
+    grid-column-start: 2;
+    border-radius: 10%;
+    border-color: rgba(0, 255, 163, 1);
+    border-style: solid;
+}
+.customers-txt {
+    background-color: transparent;
+    font-size: small;
+    margin-left: 23px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 1);
+}
+.customers-number {
+    background-color: transparent;
+    font-size: 55px;
+    color: rgba(0, 255, 163, 1);
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+
+
+.awards {
+    height: 140px;
+    width: 140px;
+    background-color: rgba(0, 24, 35, 1);
+    color: aliceblue;
+    grid-column-start: 3;
+    border-radius: 10%;
+    border-color: rgba(0, 255, 163, 1);
+    border-style: solid;
+
+
+}
+.awards-txt {
+    background-color: transparent;
+    font-size: small;
+    margin-left: 23px;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 1);
+}
+.awards-number {
+    background-color: transparent;
+    font-size: 55px;
+    color: rgba(0, 255, 163, 1);
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+/* personal info description */
+
+.my-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr 1fr);
+    background-color: transparent;
+    gap: 0 1rem;
+    padding-left: 70px;
+    justify-content: center;
+    align-items: center;  
+
+}
+.personal-info-box {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 50px;
+    width: 200px;
+    background-color: transparent;
+    margin-left: 110px;
+    
+}
+.personal-info-txt {
+    background-color: transparent;
+    color: white;
+    font-size: 30px;
+}
+
+.first-part {
+    grid-column-start: 1;
+    height: 180px;
+    width: 200px;
+    background-color: transparent;
+}
+.question-and-answer {
+    display: flex;
+    gap: 5x;
+    background-color: transparent;
+}
+.questions {
+    color: rgb(165, 163, 163);
+    background-color: transparent;
+}
+.answers {
+    color: white;
+    background-color: transparent;
+}
+.second-part {
+    grid-column-start: 2;
+    height: 180px;
+    width: 300px;
+    background-color: transparent;
+}
+
+
+/* the page's footer */
+.footer {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 24, 35, 1);
+    bottom: 0%;
+    right: 0%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.copyright {
+    color:rgba(240, 248, 255, 0.514);
+    background-color: rgba(0, 24, 35, 1);
+   
+}
+.copyrightBox {
+    background-color: rgba(0, 24, 35, 1);
+    text-align: right;
+    justify-content: flex-end;
+    padding: 0 30px;
+}
+.icons {
+    width: 40%;
+    display: flex;
+    align-content: space-around;
+    gap: 25px;
+    background-color:rgba(0, 24, 35, 1) ;
+}
+.github-icon {
+    width: 27px;
+    height: 26px;
+    background-color:  rgb(7, 76, 112);
+    margin-left: 100px;
+    border-radius: 47%;
+}
+.github-img {
+    width: 21px;
+    height: 21px;
+    background-color:rgb(7, 76, 112);
+    border-radius: 40%;
+    margin-left: 3px;
+    margin-top: 2px;
+}
+.slack-icon {
+    width: 24px;
+    height: 23px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 47%;
+
+}
+.slack-img {
+    width: 18px;
+    height: 18px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 40%;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+.gmail-icon {
+    width: 24px;
+    height: 23px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 47%;
+
+}
+.gmail-img {
+    width: 18px;
+    height: 18px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 30%;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+.insta-icon {
+    width: 24px;
+    height: 23px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 47%;
+}
+.insta-img {
+    width: 18px;
+    height: 18px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 30%;
+    margin-top: 2px;
+    margin-left: 3px;
+}
+
+.linkedin-icon {
+    width: 24px;
+    height: 23px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 47%;
+}
+.linkedin-img {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(7, 76, 112);
+    border-radius: 10%;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+
+
 
 
 
