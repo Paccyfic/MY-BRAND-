@@ -1,241 +1,210 @@
-*{
-    background-color: rgba(21, 33, 39, 1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+   background-color: rgba(21, 33, 39, 1);
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.main-main {
+    display: grid;
+    grid-auto-flow: column;
+    
 }
 
 .container {
-    display: grid;
+    display: flex;
+    background-color: transparent;
+    height: 70%;
+    width: 60%;
     gap: 1rem;
-    grid-template-columns: repeat(2, 1fr 2fr);
-    min-height: 400px;
+    /*grid-template-columns: repeat(2, 1fr 1fr);  */
+    min-height: 100px;
     grid-auto-rows: minmax(150px, auto);
+    margin-top: 20px;
+    margin-left: 200px;
+
+   
 }
 
-
-/* page's title */
-
-.about-me-box {
+.contact-box {
     color: rgba(0, 255, 163, 0.45);
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100px;
-    min-width: 100px;
+    height: 80px;
+    width: 600px;
     grid-column-start: 1;
-    grid-column-end: 5;
-    
-}
-.about-txt {
-    font-size: 51px; 
+    margin-left: 28%;
+    margin-top: 2%;
 }
 
-
-/* experience boxes */
-
-.boxes {
+.contact-txt {
+    font-size: 48px;
+}
+.description-box {
+    background-color: transparent;
     display: grid;
-    grid-template-columns: repeat(2, 1fr 1fr);
-    background-color: transparent;
-    gap: 2rem;
-    padding-left: 20px;
-    margin-top: 80px;
-    margin-left: 20px;
-    height: 350px;
-
-}
-.experience {
-    height: 140px;
-    width: 140px;
-    background-color: rgba(0, 24, 35, 1);
-    grid-column-start: 2;
-    grid-column-end: 3;
-   
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
+    grid-auto-flow: row;
+    row-gap: 1rem;
     
-    /* justify-content: center;
-    align-items: center;
-    display: flex; */
-    
-
-}
-.five {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 30px;
-}
-.line {
-    border-style: solid;
-    width: 80px;
-    margin-left: 29px;
-    background-color: transparent;
-    color: rgba(0, 255, 163, 1);
-}
-.experience-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-
-
-
-.projects {
-    height: 140px;
-    width: 140px;
-    background-color: rgba(0, 24, 35, 1);
-    color: aliceblue;
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
-}
-.pj-number {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 0px;
-}
-.projects-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-
-
-
-.customers {
-    height: 140px;
-    width: 140px;
-    background-color: rgba(0, 24, 35, 1);
-    color: aliceblue;
-    grid-column-start: 2;
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
-}
-.customers-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-.customers-number {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 0px;
-}
-
-
-
-.awards {
-    height: 140px;
-    width: 140px;
-    background-color: rgba(0, 24, 35, 1);
-    color: aliceblue;
-    grid-column-start: 3;
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
-
-
-}
-.awards-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-.awards-number {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-/* personal info description */
-
-.my-details {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr 1fr);
-    background-color: transparent;
-    gap: 0 1rem;
-    padding-left: 10px;
+    margin-top: 70px;
     justify-content: center;
     align-items: center;
-    margin-top: 2%; 
-    margin-left: 80px; 
+    grid-column-start: 1;
+    grid-column-end:2 ;
+    width: 350px;
+    height: 280px;
 
 }
-.personal-info-box {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    height: 50px;
-    width: 200px;
+.say-hi-box {
     background-color: transparent;
-    margin-left: 110px;
+    color: white;
+    height: 50px;
+    width: 250px;
     
 }
-.personal-info-txt {
+.say-hi-txt {
     background-color: transparent;
-    color: white;
-    font-size: 30px;
+    font-size:40px;
+}
+.text-box {
+    background-color: transparent;
+    color: rgba(240, 248, 255, 0.514);
+    width: 240px;
+
+}
+.text-txt {
+    background-color: transparent;
+    font-size: 18px;
+}
+.let-me-know-box {
+    color: rgba(240, 248, 255, 0.514);
+    background-color: transparent;
+}
+.let-me-know-txt {
+    background-color: transparent;
+
 }
 
-.first-part {
-    grid-column-start: 1;
-    height: 180px;
-    width: 200px;
+.forms-box {
     background-color: transparent;
+    display: grid;
+    width: 400px;
+    height: 390px;
+    grid-template-columns: repeat(1, 1fr 1fr);
+    gap: 0.5px;
+    margin-top: 50px;
+    margin-left: 120px;
+
 }
-.question-and-answer {
+.two-boxes {
     display: flex;
-    gap: 5x;
     background-color: transparent;
 }
-.questions {
-    color: rgb(165, 163, 163);
+.names-box {
     background-color: transparent;
+    height: 35px;
+    width: 140px;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
-.answers {
-    color: white;
+.names-box input{
+    height: 30px;
+    width: 140px;
+    background-color: rgba(0, 24, 35, 1);
+    border-radius: 10px;
+    border-color:rgba(0, 255, 163, 0.45) ;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+    
+}
+.email-box {
     background-color: transparent;
-}
-.second-part {
+    height: 35px;
+    width: 165px;
     grid-column-start: 2;
-    height: 180px;
-    width: 300px;
+}
+.email-box input {
+    height: 30px;
+    width: 160px;
+    background-color: rgba(0, 24, 35, 1);
+    border-radius: 10px;
+    border-color:rgba(0, 255, 163, 0.45) ;
+    margin-left: 2px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+}
+.subject-box {
     background-color: transparent;
+    height: 40px;
+    width: 305px;
+    grid-column-start: 1;
+   
+}
+.subject-box input {
+    height: 35px;
+    width: 300px;
+    background-color: rgba(0, 24, 35, 1);
+    border-radius: 10px;
+    border-color:rgba(0, 255, 163, 0.45) ;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+}
+.message-box {
+    background-color: transparent;
+    height: 205px;
+    width: 300px;
+    grid-column-start: 1;
+}
+.message-box input {
+    background-color: rgba(0, 24, 35, 1);
+    border-radius: 10%;
+    border-color:rgba(0, 255, 163, 0.45) ;
+    width: 300px;
+    height: 200px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+}
+.message-box input::placeholder{
+    align-items: start;
+}
+.button {
+    height: 80px;
+    width: 100px;
+    background-color: transparent;
+    grid-column-start: 1;
+    margin-left: 100px;
+    
+}
+.button input {
+    height: 35px;
+    width: 73px;
+    color: black;
+    background-color: rgba(10, 145, 95, 0.699);
+    border-radius: 8px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+}
+.button :active {
+    height: 32px;
+    width: 70px;
+    color: aliceblue;
+}
+.button :hover {
+    height: 38px;
+    width: 76px;
 }
 
 /* NAVBAR STYLES */
 .navbar-container {
-    height: 100%;
+    height: 450px;
+    width: 200px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
     width: 15%;
-    margin-top: 0%;
-    margin-left: 120px;
-    margin-bottom: 10%;
+    margin-top: 3%;
+    margin-left: 200px;
+    margin-bottom: 30px;
     background-color: transparent;
 }
 
@@ -314,8 +283,6 @@
 }
 
 
-
-/* the page's footer */
 .footer {
     width: 100%;
     height: 40px;
@@ -422,7 +389,3 @@
     margin-top: 2px;
     margin-left: 5px;
 }
-
-
-
-

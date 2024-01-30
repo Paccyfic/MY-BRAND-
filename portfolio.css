@@ -1,242 +1,159 @@
-*{
+* {
     background-color: rgba(21, 33, 39, 1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+ }
 
-.container {
+ .main-main {
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(2, 1fr 2fr);
-    min-height: 400px;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-flow: column;
+    
+ }
+.container {
+    display: grid; 
+    background-color: transparent;
+    height: 480px;
+    width: 80%;
+    gap: 0px;
+    grid-auto-flow: column;
+    margin-left: 250px;
+    margin-top: 0px;
+    justify-content: center;
+    align-items: center;
 }
-
-
-/* page's title */
-
-.about-me-box {
+.title-box {
+    height: 70px;
+    background-color: transparent;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 330px;
+    margin-top: 40px;
+}
+.title-txt {
     color: rgba(0, 255, 163, 0.45);
     background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100px;
-    min-width: 100px;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    
+    font-size: 45px;
+
 }
-.about-txt {
-    font-size: 51px; 
-}
-
-
-/* experience boxes */
-
-.boxes {
+.projects-box {
     display: grid;
-    grid-template-columns: repeat(2, 1fr 1fr);
     background-color: transparent;
-    gap: 2rem;
-    padding-left: 20px;
-    margin-top: 80px;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px;
+    gap: 20px;
     margin-left: 20px;
-    height: 350px;
 
 }
-.experience {
-    height: 140px;
-    width: 140px;
+.project-1 {
+    height: 200px;
+    width: 200px;
     background-color: rgba(0, 24, 35, 1);
-    grid-column-start: 2;
-    grid-column-end: 3;
-   
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
-    
-    /* justify-content: center;
-    align-items: center;
-    display: flex; */
-    
-
-}
-.five {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 30px;
-}
-.line {
-    border-style: solid;
-    width: 80px;
-    margin-left: 29px;
-    background-color: transparent;
-    color: rgba(0, 255, 163, 1);
-}
-.experience-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-
-
-
-.projects {
-    height: 140px;
-    width: 140px;
-    background-color: rgba(0, 24, 35, 1);
-    color: aliceblue;
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
-}
-.pj-number {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 0px;
-}
-.projects-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-
-
-
-.customers {
-    height: 140px;
-    width: 140px;
-    background-color: rgba(0, 24, 35, 1);
-    color: aliceblue;
-    grid-column-start: 2;
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
-}
-.customers-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-.customers-number {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 0px;
-}
-
-
-
-.awards {
-    height: 140px;
-    width: 140px;
-    background-color: rgba(0, 24, 35, 1);
-    color: aliceblue;
-    grid-column-start: 3;
-    border-radius: 10%;
-    border-color: rgba(0, 255, 163, 1);
-    border-style: solid;
-
-
-}
-.awards-txt {
-    background-color: transparent;
-    font-size: small;
-    margin-left: 23px;
-    margin-bottom: 10px;
-    color: rgba(255, 255, 255, 1);
-}
-.awards-number {
-    background-color: transparent;
-    font-size: 55px;
-    color: rgba(0, 255, 163, 1);
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-/* personal info description */
-
-.my-details {
     display: grid;
-    grid-template-columns: repeat(3, 1fr 1fr);
-    background-color: transparent;
-    gap: 0 1rem;
-    padding-left: 10px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2%; 
-    margin-left: 80px; 
-
-}
-.personal-info-box {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    height: 50px;
-    width: 200px;
-    background-color: transparent;
-    margin-left: 110px;
+    grid-auto-flow: row;
+    padding: 0;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: rgba(0, 255, 163, 0.45);
     
 }
-.personal-info-txt {
+.texts-box {
+    font-size: 12px;
+    color: aliceblue;
     background-color: transparent;
-    color: white;
-    font-size: 30px;
+    height: 30px;
+    margin-top: 2px;
 }
+.texts {
+    background-color: transparent;
+    margin-left: 2px;
+}
+.image {
+    height: 150px;
+    width: 195px;
+    background-color: transparent;
+    display: grid;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10%;
+    border-style: groove;
+    border-color: rgba(0, 255, 163, 0.45);
+}
+.image img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px;
 
-.first-part {
-    grid-column-start: 1;
-    height: 180px;
+}
+.project-2 {
+    height: 200px;
     width: 200px;
-    background-color: transparent;
+    background-color: rgba(0, 24, 35, 1);
+    display: grid;
+    grid-auto-flow: row;
+    padding: 0;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: rgba(0, 255, 163, 0.45);
+    
 }
-.question-and-answer {
-    display: flex;
-    gap: 5x;
-    background-color: transparent;
+.project-3 {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(0, 24, 35, 1);
+    display: grid;
+    grid-auto-flow: row;
+    padding: 0;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: rgba(0, 255, 163, 0.45);
 }
-.questions {
-    color: rgb(165, 163, 163);
-    background-color: transparent;
+.project-4 {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(0, 24, 35, 1);
+    display: grid;
+    grid-auto-flow: row;
+    padding: 0;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: rgba(0, 255, 163, 0.45);
 }
-.answers {
-    color: white;
-    background-color: transparent;
+.project-5 {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(0, 24, 35, 1);
+    display: grid;
+    grid-auto-flow: row;
+    padding: 0;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: rgba(0, 255, 163, 0.45);
 }
-.second-part {
-    grid-column-start: 2;
-    height: 180px;
-    width: 300px;
-    background-color: transparent;
+.project-6 {
+    height: 200px;
+    width: 200px;
+    background-color: rgba(0, 24, 35, 1);
+    display: grid;
+    grid-auto-flow: row;
+    padding: 0;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: rgba(0, 255, 163, 0.45);
 }
 
 /* NAVBAR STYLES */
 .navbar-container {
-    height: 100%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 15%;
-    margin-top: 0%;
-    margin-left: 120px;
-    margin-bottom: 10%;
-    background-color: transparent;
+    margin-top: 30px;
+    margin-left: 300px;
 }
 
 .navbar-container nav {
@@ -315,7 +232,6 @@
 
 
 
-/* the page's footer */
 .footer {
     width: 100%;
     height: 40px;
@@ -422,7 +338,4 @@
     margin-top: 2px;
     margin-left: 5px;
 }
-
-
-
 
