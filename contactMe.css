@@ -117,6 +117,7 @@
     border-radius: 10px;
     border-color:rgba(0, 255, 163, 0.45) ;
     box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+    color: white;
     
 }
 .email-box {
@@ -133,6 +134,7 @@
     border-color:rgba(0, 255, 163, 0.45) ;
     margin-left: 2px;
     box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+    color: white;
 }
 .subject-box {
     background-color: transparent;
@@ -148,6 +150,7 @@
     border-radius: 10px;
     border-color:rgba(0, 255, 163, 0.45) ;
     box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+    color: white;
 }
 .message-box {
     background-color: transparent;
@@ -162,6 +165,8 @@
     width: 300px;
     height: 200px;
     box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.50);
+    text-align: start;
+    color: white;
 }
 .message-box input::placeholder{
     align-items: start;
@@ -226,9 +231,7 @@
     transition: ease-in-out all .3s;
 }
 
-.nav-icon-container:hover {
-    transform: translateX(5px);
-}
+
 
 .nav-icon-container i {
     color: #00FEA4;
@@ -246,13 +249,12 @@
 
 .nav-icon-container:hover h1 {
     opacity: 1;
-    transform: translateX(5px);
     transition: ease-in-out all .3s;
     padding: 4px 10px;
     border-radius: 20px;
     text-transform: uppercase;
+   font-weight: 700px;
     font-size: 14px;
-    font-weight: 700;
     background-color: #0E7AB4;
 }
 

@@ -186,9 +186,7 @@
     transition: ease-in-out all .3s;
 }
 
-.nav-icon-container:hover {
-    transform: translateX(5px);
-}
+
 
 .nav-icon-container i {
     color: #00FEA4;
@@ -206,13 +204,12 @@
 
 .nav-icon-container:hover h1 {
     opacity: 1;
-    transform: translateX(5px);
     transition: ease-in-out all .3s;
     padding: 4px 10px;
     border-radius: 20px;
     text-transform: uppercase;
+   font-weight: 700px;
     font-size: 14px;
-    font-weight: 700;
     background-color: #0E7AB4;
 }
 

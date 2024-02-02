@@ -11,7 +11,7 @@
     <main class="container">
         <div class="description-box">
             <div class="title-box">
-                <h1 class="title-txt">SIGN UP</h1>
+                <h1 class="title-txt">Register now!</h1>
             </div>
             <div class="to-keep-box">
                 <h2 class="to-keep-txt">TO KEEP UPDATED...</h2>
@@ -20,31 +20,48 @@
                 <p class="text-txt"> Sign up For Every Update On My Blog. You can get access to the Exclusive Content marvelously prepared with Passion.</p>
             </div>
         </div>
-      <form action="#">  
+      <form action="landingpage.html" id="sign-up-form">  
          <div class="form-box">             
-             <div class="fname-box">
-                 <p class="fname-txt">&nbsp; User Name:</p>
-                 <input type="text" placeholder="&nbsp; Name">
+             <div class="input-group ">
+                 <span class="fname-txt">&nbsp; User Name:</span><br>
+                 <input type="text" id="username" placeholder=" Name" name="Name">
+                 <i class="fa-solid fa-circle-check"></i> 
+                 <i class="fa-solid fa-circle-exclamation"></i> 
+                 <p>Error message</p>
              </div>
-             <div class="email-box">
-                 <p class="email-txt">&nbsp; Email:</p> 
-                 <input type="text" placeholder="&nbsp; example@gmail.com">
+             <div class="input-group">
+                 <span class="email-txt">&nbsp; Email:</span><br> 
+                 <input type="email" id="email" placeholder=" example@gmail.com" name="Email">
+                 <i class="fa-solid fa-circle-check"></i> 
+                 <i class="fa-solid fa-circle-exclamation"></i> 
+                 <p>Error message</p>
              </div>
-             <div class="password-box">
-                  <p class="password-txt">&nbsp; Password:</p>
-                 <input type="password" placeholder="&nbsp;*******" >
+             <div class="input-group">
+                 <span class="password-txt">&nbsp; Password:</span><br>
+                 <input type="password" id="password" placeholder="Enter Password" name="password">
+                 <i class="fa-solid fa-circle-check"></i> 
+                 <i class="fa-solid fa-circle-exclamation"></i> 
+                 <p>Error message</p>
+             </div>
+             <div class="input-group">
+                <span class="confirm-password-txt">&nbsp; Confirm Password:</span><br>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" name="confirm-password">
+                <i class="fa-solid fa-circle-check"></i> 
+                <i class="fa-solid fa-circle-exclamation"></i> 
+                <p>Error message</p>
              </div>
              <div class="button">
                 <input type="submit" value="Sign Up">
              </div>
              <div class="admin-login-box">
-                <a href="" class="admin-login-txt">login as Admin</a>
+                <a href="login.html" class="login-txt">already registered?</a>
+                <a href="admin-login.html" class="admin-login-txt">login as Admin</a>
              </div>
           </div>
       </form>
       <header class="navbar-container">
          <nav>
-            <a href="index.html"  class="nav-icon-container">
+            <a href="landingpage.html"  class="nav-icon-container">
                 <h1>Home</h1>
                 <i class="fa-solid fa-house"></i>
             </article>
@@ -87,5 +104,11 @@
        </div>
        <div class="copyrightBox"><p class="copyright"> Paccy's Portfolio &#169;2024</p></div>
     </div>
+    <script src="sign-up.js"></script>
 </body>
 </html>
+
+
+
+
+
