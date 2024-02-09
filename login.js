@@ -1,27 +1,7 @@
-/* const form = document.querySelector('#sign-up-form');
-const usernameInput = document.querySelector('#username');
-const emailInput = document.querySelector('#email');
-const passwordInput = document.querySelector('#password');
-const confirmPasswordInput = document.querySelector('#confirm-password');
-
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    validateForm ();
-
-});
-
-function validateForm() {
-    if (usernameInput.value.trim()==='') {
-        setError(usernameInput, 'Username Required!')
-    }
-} */
-
 const form = document.querySelector('#sign-up-form');
 const usernameInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
-const confirmPasswordInput = document.querySelector('#confirm-password');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -29,20 +9,28 @@ form.addEventListener('submit', (event) => {
     console.log(isFormValid());
     if (isFormValid() == true) {
         const emailExists = localStorage.getItem('email');
-
-        if (emailExists === emailInput.value) {
-            setError(emailInput, 'Conflict. Email already exists')
+        const passwordExists = localStorage.getItem('password');
+        const usernameExists = localStorage.getItem('username');
+        if (emailExists === emailInput.value ) {
+            setSuccess(emailInput);
         } 
-        else {
-            localStorage.setItem('email', emailInput.value)
-            localStorage.setItem('username', usernameInput.value)
-            localStorage.setItem('password', passwordInput.value)
-            form.submit();
-            alert("Account created successfully!")
+        else if (passwordExists === passwordInput.value ){
+            setSuccess(passwordInput);
+        } else if (usernameExists === usernameInput.value){
+            setSuccess(usernameInput);
         }
-    }
-
-});
+        else {
+            setError( );
+            /* localStorage.setItem('email', emailInput.value)
+            localStorage.setItem('username', usernameInput.value)
+            localStorage.setItem('password', passwordInput.value) */
+            alert("Welcome to my Portfolio!");
+           
+        } form.submit();
+    } 
+   
+    
+})
 
 function isFormValid() {
     const inputContainers = form.querySelectorAll('.input-group');
@@ -57,38 +45,42 @@ function isFormValid() {
 
 function validateForm() {
     //USERNAME
+    const emailExists = localStorage.getItem('email');
+    const passwordExists = localStorage.getItem('password');
+    const usernameExists = localStorage.getItem('username');
     if (usernameInput.value.trim() === '') {
         setError(usernameInput, 'Name is required!');
     } else if (usernameInput.value.trim().length < 5 || usernameInput.value.trim().length > 15) {
         setError(usernameInput, 'Name must be min 5 and max 15 charecters');
-    } else {
+    } else if (usernameInput.value !== usernameExists) {
+        setError(usernameInput, 'User doesn`t exist!');
+    } 
+    else {
         setSuccess(usernameInput);
     }
     //EMAIL
     if (emailInput.value.trim() == '') {
         setError(emailInput, 'Provide email address');
-    } else if (isEmailValid(emailInput.value)) {
+        
+    } 
+    else if (emailInput.value === emailExists) {
         setSuccess(emailInput);
-    } else {
-        setError(emailInput, 'Provide a valid email address');
     }
-
+    else {
+        setError(emailInput, 'Incorrect email or Password!');
+    }
     //PASSWORD
     if (passwordInput.value.trim() == '') {
         setError(passwordInput, 'Password can not be empty');
     } else if (passwordInput.value.trim().length < 6 || passwordInput.value.trim().length > 20) {
         setError(passwordInput, 'Password min 6 max 20 charecters');
-    } else {
+    } 
+    else if (passwordInput.value === passwordExists){
         setSuccess(passwordInput);
     }
-    //CONFIRM PASSWORD
-    if (confirmPasswordInput.value.trim() == '') {
-        setError(confirmPasswordInput, 'This field can not be empty');
-    } else if (confirmPasswordInput.value !== passwordInput.value) {
-        setError(confirmPasswordInput, 'Password does not match');
-    } else {
-        setSuccess(confirmPasswordInput);
-    }
+    else  {
+        setError(passwordInput,'Incorrect email or password!');
+    } 
 }
 
 function setError(element, errorMessage) {

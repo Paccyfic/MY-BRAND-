@@ -9,8 +9,6 @@
 .container {
     display:flex;
     flex-direction: column;
-   /* 
-    grid-template-columns: repeat(2, 1fr 1fr); */  
     flex-flow: column;
     justify-content: center;
     align-items: center;
@@ -52,11 +50,6 @@
 
 }
 
-.fname-txt {
-    background-color: transparent;
-    font-size: 15px;
-    margin-top: 20px;
-}
 .input-group {
     background-color: transparent;
     height: 40px;
@@ -87,14 +80,14 @@
     margin-top: 9px;
     visibility: hidden;
 }
-.success input{
+/* .success input{
     border-color: rgb(23, 187, 23);
 }
 .success i.fa-circle-check {
     visibility: visible;
     color: rgb(26, 146, 26);
     background-color: transparent;
-}
+} */
 
 .error input{
     border-color: red;
@@ -179,4 +172,7 @@
     color: gray;
     background-color: transparent;
     margin-bottom: 40px;
-}
+}  
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="creating-blogs.css">
+    <script src="https://kit.fontawesome.com/5ed7f3275e.js" crossorigin="anonymous"></script>
+    <title>Creat a blog.</title>
+
+</head>
+<body>
+    <aside class="sidebar">
+        <menu class="nav-container">
+            <h1 class="sidebar-header">Paccy's</h1>
+            <details class="item-container">
+              <summary class="item-header"><a href="dashboard.html" class="creating-article-txt">Articles</a></summary>   
+            </details>
+            <details class="item-container">
+                <summary class="item-header">Profile</summary>
+            </details>
+            <details class="item-container">
+                <summary class="item-header">Queries</summary>
+            </details>
+            <details class="item-container">
+                <summary class="item-header">Registered Users</summary>
+            </details>
+            <details class="item-container">
+                <summary class="item-header">Create Article</summary>
+            </details>
+            <details class="item-container">
+                <summary class="item-header">Site Activity</summary>
+            </details>  
+    </aside>
+    <form class="container" id="form">
+        <div class="close-btn">
+            <i class="fa-solid fa-circle-xmark"></i>
+        </div>
+        <div class="title">
+            <h3>Create Article</h3>
+        </div>
+        <div class="choose-box">
+            <p class="choose-txt">Choose Thumbnail</p>
+            <div class="thumbnail-box">
+                <input style="opacity: 0; width: 1px;" type="file" id="thumbnail" accept="image/*">
+                <label for="thumbnail"><i class="fa-solid fa-cloud-arrow-up" id="thumbnail-icon"></i></label>
+            </div>
+        </div>
+        <div class="headline-box">
+            <p>Headline</p>
+            <div class="input-box">
+                <input type="text" id="heading" name="heading">
+            </div>
+        </div>
+        <div class="article-main-box">
+            <p>Story/Article</p>
+            <div class="article-box">
+                <span class="editing-tools">
+                   <i class="fa-solid fa-bold"></i>
+                   <i class="fa-solid fa-underline"></i>
+                   <i class="fa-solid fa-italic"></i>
+                </span>
+                <textarea type="text" id="article" name="article" cols="30" rows="10"></textarea>
+                
+            </div> 
+        </div>
+        <div class="button">
+         <input type="submit" value="POST">
+        </div>
+    </form>
+    <script src="creating-blogs.js"></script>
+</body>
+</html>

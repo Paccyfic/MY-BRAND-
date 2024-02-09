@@ -66,7 +66,7 @@
     
 }
 .email-txt {
-    margin-top: 10px;
+    margin-top: 30px;
     background-color: transparent;
     font-size: 15px;
 }
@@ -88,10 +88,10 @@
     visibility: hidden;
 }
 .success input{
-    border-color: rgb(23, 187, 23);
+    border-color: rgba(0, 255, 163, 0.45);
 }
 .success i.fa-circle-check {
-    visibility: visible;
+    visibility: hidden;
     color: rgb(26, 146, 26);
     background-color: transparent;
 }
