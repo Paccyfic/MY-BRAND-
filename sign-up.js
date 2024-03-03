@@ -17,6 +17,34 @@ function validateForm() {
     }
 } */
 
+// const form = document.querySelector('#sign-up-form');
+// const usernameInput = document.querySelector('#username');
+// const emailInput = document.querySelector('#email');
+// const passwordInput = document.querySelector('#password');
+// const confirmPasswordInput = document.querySelector('#confirm-password');
+
+// form.addEventListener('submit', (event) => {
+//     event.preventDefault();
+//     validateForm();
+//     console.log(isFormValid());
+//     if (isFormValid() == true) {
+//         const emailExists = localStorage.getItem('email');
+
+//         if (emailExists === emailInput.value) {
+//             setError(emailInput, 'Conflict. Email already exists')
+//         } 
+//         else {
+//             localStorage.setItem('email', emailInput.value)
+//             localStorage.setItem('username', usernameInput.value)
+//             localStorage.setItem('password', passwordInput.value)
+//             form.submit();
+//             alert("Account created successfully!")
+//         }
+//     }
+
+// });
+
+
 const form = document.querySelector('#sign-up-form');
 const usernameInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email');
@@ -26,23 +54,33 @@ const confirmPasswordInput = document.querySelector('#confirm-password');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     validateForm();
-    console.log(isFormValid());
-    if (isFormValid() == true) {
-        const emailExists = localStorage.getItem('email');
 
-        if (emailExists === emailInput.value) {
-            setError(emailInput, 'Conflict. Email already exists')
-        } 
-        else {
-            localStorage.setItem('email', emailInput.value)
-            localStorage.setItem('username', usernameInput.value)
-            localStorage.setItem('password', passwordInput.value)
+    if (isFormValid()) {
+        const usersData = JSON.parse(localStorage.getItem('users')) || [];
+
+        // Check if the user with the same email already exists
+        const existingUser = usersData.find(user => user.email === emailInput.value);
+
+        if (existingUser) {
+            setError(emailInput, 'Conflict. Email already exists');
+        } else {
+            const newUser = {
+                username: usernameInput.value,
+                email: emailInput.value,
+                password: passwordInput.value,
+                blocked: false // New property to track blocked status
+            };
+
+            usersData.push(newUser);
+            localStorage.setItem('users', JSON.stringify(usersData));
+
             form.submit();
-            alert("Account created successfully!")
+            alert("Account created successfully!");
         }
     }
-
 });
+
+// ... (rest of the validation functions remain the same)
 
 function isFormValid() {
     const inputContainers = form.querySelectorAll('.input-group');
