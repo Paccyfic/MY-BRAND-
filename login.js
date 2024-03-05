@@ -16,7 +16,8 @@ form.addEventListener('submit', async (event) => {
           'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
-          Email: emailInput.value,
+          name: usernameInput.value,
+          email: emailInput.value,
           password: passwordInput.value,
         }),
       });
