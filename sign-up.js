@@ -14,7 +14,7 @@ form.addEventListener('submit', async (event) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
+          
         },
         body: JSON.stringify({
           name: usernameInput.value,
@@ -24,7 +24,7 @@ form.addEventListener('submit', async (event) => {
       });
 
       const result = await response.json();
-      console.log (result)
+      console.log (result);
 
       if (response.status === 201) {
         // Successful signup
