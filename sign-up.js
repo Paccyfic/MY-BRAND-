@@ -29,6 +29,7 @@ form.addEventListener('submit', async (event) => {
         // Successful signup
         alert('Account created successfully!');
         // Redirect or perform any other actions after successful signup
+        window.location.href = 'login.html';
       } else {
         // Handle signup errors
         alert(result.message);
