@@ -24,6 +24,7 @@ form.addEventListener('submit', async (event) => {
       });
 
       const result = await response.json();
+      console.log (result)
 
       if (response.status === 201) {
         // Successful signup
