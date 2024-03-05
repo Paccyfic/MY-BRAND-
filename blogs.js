@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function (e) {
     let blogs = JSON.parse(localStorage.getItem('blogs')) || [];
 
     // RENDER BLOGS
-    const blog_container = document.querySelector('.projects-box');
+    const blogContainer = document.getElementById('blogs-container');
 
     // ADD PAGE WHEN THERE ARE NO BLOGS
     if (blogs.length === 0) {
-        blog_container.innerHTML = `
+        blogContainer.innerHTML = `
             <div class="no-blogs">
                 <p>No blogs available</p>
             </div>
@@ -18,16 +18,27 @@ document.addEventListener('DOMContentLoaded', function (e) {
 
     blogs.forEach((blog, index) => {
         const div = document.createElement('div');
-        div.className = `project-${index + 1}`;
+        div.className = `project-card`;
         div.innerHTML = `
+            <div class="image"><img src="${blog.thumbnail}" alt="blog-image"></div>
             <div class="texts-box">
-                <span>
-                    <p class="heading-texts">${blog.heading}</p>
-                    <p class="texts">${blog.article}</p>
-                </span>
+                <p class="heading-texts">${blog.heading}</p>
+                <p class="texts">${truncateText(blog.article, 5)}</p>
+                <a href="#" onclick="viewSingleBlog(${index})" class="read-more-button">Read More</a>
             </div>
-            <div class="image"><img src="${blog.thumbnail}" alt="pj-1-image"></div>
         `;
-        blog_container.appendChild(div);
+        blogContainer.appendChild(div);
     });
 });
+
+function truncateText(text, lines) {
+    // Truncate the text to a certain number of lines
+    const truncated = text.split('\n').slice(0, lines).join('\n');
+    return truncated;
+}
+
+function viewSingleBlog(index) {
+    // Redirect to the single blog view page with the selected blog index
+    localStorage.setItem('selectedBlogIndex', index);
+    window.location.href = 'blog-single-view.html';
+}
