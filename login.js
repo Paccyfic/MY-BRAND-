@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
           'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
-          email: emailInput.value,
+          Email: emailInput.value,
           password: passwordInput.value,
         }),
       });
@@ -51,9 +51,6 @@ function isFormValid() {
 
 function validateForm() {
   //USERNAME
-  const emailExists = localStorage.getItem('email');
-  const passwordExists = localStorage.getItem('password');
-  const usernameExists = localStorage.getItem('username');
   if (usernameInput.value.trim() === '') {
       setError(usernameInput, 'Name is required!');
   } else if (usernameInput.value.trim().length < 5 || usernameInput.value.trim().length > 15) {
