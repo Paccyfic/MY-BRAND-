@@ -68,30 +68,10 @@ async function deleteUser(userId) {
     }
 }
 
-async function toggleBlockStatus(userId, isBlocked) {
-    try {
-        const response = await fetch(`http://localhost:3000/api/users/block/${userId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ blocked: !isBlocked }),
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to toggle block status');
-        }
-
-        const result = await response.json();
-        console.log(result);
-
-        // Refresh the displayed users after successful block/unblock
-        displayUsers();
-    } catch (error) {
-        console.error('Error during toggling block status:', error);
-    }
+function redirectToUpdatePage(userId) {
+    // Redirect to the update-user.html page with the user ID as a parameter
+    window.location.href = `update-user.html?userId=${userId}`;
 }
-
 
 
 
