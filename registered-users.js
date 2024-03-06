@@ -28,9 +28,8 @@ async function displayUsers() {
                 <td>${user.email}</td>
                 <td>${new Date(user.createdAt).toLocaleDateString()}</td>
                 <td> 
-                    <input type="submit" class="block-btn${user.blocked ? ' blocked' : ''}" 
-                        value="${user.blocked ? 'UNBLOCK' : 'BLOCK'}" 
-                        onclick="toggleBlockStatus(${user._id}, ${user.blocked})">
+                    <input type="submit" class="update-btn" 
+                        value="Update" onclick="redirectToUpdatePage(${user._id})">
                 </td>
                 <td> 
                     <input type="submit" class="delete-btn" 
