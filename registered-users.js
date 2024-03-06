@@ -37,6 +37,10 @@ async function displayUsers() {
                 </td>
             `;
 
+
+            //"
+
+
             tableBody.appendChild(row);
         });
     } catch (error) {
@@ -69,7 +73,7 @@ async function deleteUser(userId) {
 
 function redirectToUpdatePage(userId) {
     // Redirect to the update-user.html page with the user ID as a parameter
-    window.location.href = `update-user.html`;
+    window.location.href = `update-user.html?userId=${userId}`;
 }
 
 
