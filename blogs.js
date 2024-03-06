@@ -1,4 +1,50 @@
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener('DOMContentLoaded', async function (e) {
+    e.preventDefault();
+
+    const blogContainer = document.getElementById('blogs-container');
+
+    try {
+        const response = await fetch('http://localhost:3000/blogs');
+        const blogs = await response.json();
+
+        if (blogs.length === 0) {
+            blogContainer.innerHTML = `
+                <div class="no-blogs">
+                    <p>No blogs available</p>
+                </div>
+            `;
+        } else {
+            blogs.forEach((blog, index) => {
+                const div = document.createElement('div');
+                div.className = `project-card`;
+                div.innerHTML = `
+                    <div class="image"><img src="${blog.image}" alt="blog-image"></div>
+                    <div class="texts-box">
+                        <p class="heading-texts">${blog.title}</p>
+                        <p class="texts">${truncateText(blog.body, 5)}</p>
+                        <a href="#" onclick="viewSingleBlog('${blog._id}')" class="read-more-button">Read More</a>
+                    </div>
+                `;
+                blogContainer.appendChild(div);
+            });
+        }
+    } catch (error) {
+        console.error('Error fetching blogs:', error);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+/*document.addEventListener('DOMContentLoaded', function (e) {
     e.preventDefault();
 
     // LOAD BLOGS FROM LOCAL STORAGE
@@ -42,3 +88,4 @@ function viewSingleBlog(index) {
     localStorage.setItem('selectedBlogIndex', index);
     window.location.href = 'blog-single-view.html';
 }
+*/

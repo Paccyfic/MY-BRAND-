@@ -5,6 +5,62 @@ document.addEventListener('DOMContentLoaded', function (e) {
     let thumbnail_value = thumbnail.value;
     const heading = document.querySelector('#heading');
     const article = document.querySelector('#article');
+
+    const thumbnail_icon = document.querySelector('#thumbnail-icon');
+
+    const form = document.querySelector('#form');
+
+    thumbnail.addEventListener('change', function (e) {
+        const reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onload = function () {
+            const img = document.createElement('img');
+            img.src = reader.result;
+            img.style.width = '100%';
+            img.style.height = '100%';
+            thumbnail.parentElement.appendChild(img);
+            thumbnail_icon.style.display = 'none';
+            thumbnail_value = reader.result;
+        };
+    });
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('http://localhost:3000/blogs', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                window.location.href = 'http://localhost:3000/blogs.html';
+            } else {
+                console.error('Error creating blog:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error creating blog:', error);
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+/*document.addEventListener('DOMContentLoaded', function (e) {
+    e.preventDefault();
+
+    const thumbnail = document.querySelector('#thumbnail');
+    let thumbnail_value = thumbnail.value;
+    const heading = document.querySelector('#heading');
+    const article = document.querySelector('#article');
     
 
     const thumbnail_icon = document.querySelector('#thumbnail-icon');
@@ -43,4 +99,4 @@ document.addEventListener('DOMContentLoaded', function (e) {
         // NAVIGATE TO BLOGS PAGE
         window.location.href = 'blogs.html';
     });
-});
+});*/
