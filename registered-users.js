@@ -69,7 +69,7 @@ async function deleteUser(userId) {
 
 function redirectToUpdatePage(userId) {
     // Redirect to the update-user.html page with the user ID as a parameter
-    window.location.href = `update-user.html?userId=${userId}`;
+    window.location.href = `update-user.html`;
 }
 
 
