@@ -27,6 +27,7 @@ form.addEventListener('submit', async (event) => {
       if (response.status === 200) {
         // Successful login
         alert('Login successful!');
+        window.location.href = 'index.html';
         // Save token or perform any other actions after successful login
       } else {
         // Handle login errors
