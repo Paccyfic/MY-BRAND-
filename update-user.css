@@ -52,7 +52,10 @@ body {
 
 .title {
     background-color: transparent;
+    font-size: 21px;
     margin-left: 38%;
+    margin-top: 6%;
+    margin-bottom: 7%;
 }
 
 
@@ -64,8 +67,9 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bolder;
+    margin-bottom: 3%;
 }
-.input-box {
+.username-box {
     height: 88%;
     width: 45%;
     background-color: rgba(19, 38, 47, 1);
@@ -77,8 +81,9 @@ body {
     align-items: center;
     justify-content: center;
     margin-left: 2%;
+    
 }
-.input-box input {
+.username-box input {
     background-color: rgba(0, 24, 35, 1);
     border-color: rgba(14, 121, 178, 1);
     color: white;
@@ -91,6 +96,86 @@ body {
 
 }
 
+.email-box {
+    height: 88%;
+    width: 45%;
+    background-color: rgba(19, 38, 47, 1);
+    border-color: rgba(14, 121, 178, 1);
+    border-style: groove;
+    border-radius: 8px;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8%;
+    
+}
+.email-box input {
+    background-color: rgba(0, 24, 35, 1);
+    border-color: rgba(14, 121, 178, 1);
+    color: white;
+    padding-left: 4%;
+    border-style: groove;
+    border-radius: 8px;
+    border-width: 2px;
+    height: 90%;
+    width: 98%;
+
+}
+
+.password-box {
+    height: 88%;
+    width: 45%;
+    background-color: rgba(19, 38, 47, 1);
+    border-color: rgba(14, 121, 178, 1);
+    border-style: groove;
+    border-radius: 8px;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2%;
+    
+}
+.password-box input {
+    background-color: rgba(0, 24, 35, 1);
+    border-color: rgba(14, 121, 178, 1);
+    color: white;
+    padding-left: 4%;
+    border-style: groove;
+    border-radius: 8px;
+    border-width: 2px;
+    height: 90%;
+    width: 98%;
+
+}
+
+.confirm-box {
+    height: 88%;
+    width: 45%;
+    background-color: rgba(19, 38, 47, 1);
+    border-color: rgba(14, 121, 178, 1);
+    border-style: groove;
+    border-radius: 8px;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2%;
+    
+}
+.confirm-box input {
+    background-color: rgba(0, 24, 35, 1);
+    border-color: rgba(14, 121, 178, 1);
+    color: white;
+    padding-left: 4%;
+    border-style: groove;
+    border-radius: 8px;
+    border-width: 2px;
+    height: 90%;
+    width: 98%;
+
+}
 
 .button {
     display: flex;
@@ -98,7 +183,7 @@ body {
     width: 30%;
     height: 8%;
     background-color: transparent;
-    margin: 0 32%;
+    margin: 5% 32%;
 }
 .button input {
     width: 99%;
