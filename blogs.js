@@ -3,34 +3,65 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
     const blogContainer = document.getElementById('blogs-container');
 
-    try {
-        const response = await fetch('http://localhost:3000/blogs');
-        const blogs = await response.json();
+    // Function to fetch blogs
+    const fetchBlogs = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/blogs');
+            const blogs = await response.json();
 
-        if (blogs.length === 0) {
-            blogContainer.innerHTML = `
-                <div class="no-blogs">
-                    <p>No blogs available</p>
-                </div>
-            `;
-        } else {
-            blogs.forEach((blog, index) => {
-                const div = document.createElement('div');
-                div.className = `project-card`;
-                div.innerHTML = `
-                    <div class="image"><img src="${blog.image}" alt="blog-image"></div>
-                    <div class="texts-box">
-                        <p class="heading-texts">${blog.title}</p>
-                        <p class="texts">${truncateText(blog.body, 5)}</p>
-                        <a href="#" onclick="viewSingleBlog('${blog._id}')" class="read-more-button">Read More</a>
+            if (blogs.length === 0) {
+                blogContainer.innerHTML = `
+                    <div class="no-blogs">
+                        <p>No blogs available</p>
                     </div>
                 `;
-                blogContainer.appendChild(div);
-            });
+            } else {
+                blogs.forEach((blog, index) => {
+                    const div = document.createElement('div');
+                    div.className = `project-card`;
+                    div.innerHTML = `
+                        <div class="image"><img src="${blog.image}" alt="blog-image"></div>
+                        <div class="texts-box">
+                            <p class="heading-texts">${blog.title}</p>
+                            <p class="texts">${truncateText(blog.body, 5)}</p>
+                            <a href="#" onclick="viewSingleBlog('${blog._id}')" class="read-more-button">Read More</a>
+                        </div>
+                    `;
+                    blogContainer.appendChild(div);
+                });
+            }
+        } catch (error) {
+            console.error('Error fetching blogs:', error);
         }
-    } catch (error) {
-        console.error('Error fetching blogs:', error);
-    }
+    };
+
+    // Initial fetch when the page loads
+    await fetchBlogs();
+
+    const form = document.querySelector('#form');
+
+    // Inside your form submit event handler, after creating the blog, fetch blogs again
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch('http://localhost:3000/api/blogs/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                // Fetch blogs again after creating a new one
+                await fetchBlogs();
+            } else {
+                console.error('Error creating blog:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error creating blog:', error);
+        }
+    });
 });
 
 
