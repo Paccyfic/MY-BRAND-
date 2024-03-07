@@ -70,9 +70,6 @@ function validateForm() {
   }
 }
 
-// ... (Remaining functions are the same)
-
-// ... (Your existing code)
 
 function setSuccess(element) {
     const parent = element.parentElement;
