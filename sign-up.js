@@ -1,21 +1,4 @@
-/* const form = document.querySelector('#sign-up-form');
-const usernameInput = document.querySelector('#username');
-const emailInput = document.querySelector('#email');
-const passwordInput = document.querySelector('#password');
-const confirmPasswordInput = document.querySelector('#confirm-password');
 
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    validateForm ();
-
-});
-
-function validateForm() {
-    if (usernameInput.value.trim()==='') {
-        setError(usernameInput, 'Username Required!')
-    }
-} */
 
 const form = document.querySelector('#sign-up-form');
 const usernameInput = document.querySelector('#username');
@@ -131,3 +114,27 @@ function isEmailValid(email) {
 
     return reg.test(email);
 }
+  
+
+
+
+
+
+/* const form = document.querySelector('#sign-up-form');
+const usernameInput = document.querySelector('#username');
+const emailInput = document.querySelector('#email');
+const passwordInput = document.querySelector('#password');
+const confirmPasswordInput = document.querySelector('#confirm-password');
+
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    validateForm ();
+
+});
+
+function validateForm() {
+    if (usernameInput.value.trim()==='') {
+        setError(usernameInput, 'Username Required!')
+    }
+} */
