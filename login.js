@@ -31,7 +31,7 @@ form.addEventListener('submit', async (event) => {
         localStorage.setItem('token', token);
 
         // Redirect or perform any other actions after successful login
-        window.location.href = 'index.html';
+        window.location.href = 'dashboard.html';
       } else {
         // Handle login errors
         alert(result.message);
