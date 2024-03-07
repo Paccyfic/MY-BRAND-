@@ -27,8 +27,9 @@ form.addEventListener('submit', async (event) => {
       if (response.status === 200) {
         // Successful login
         alert('Login successful!');
+
+      // Save token or perform any other actions after successful login
         window.location.href = 'index.html';
-        // Save token or perform any other actions after successful login
       } else {
         // Handle login errors
         alert(result.message);
@@ -113,6 +114,9 @@ function isEmailValid(email) {
 }
 
 // ... (rest of the validation functions remain the same)
+
+
+
 
 
 
