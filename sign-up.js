@@ -1,48 +1,6 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const signupForm = document.getElementById('signup-form');
-    signupForm.addEventListener('submit', handleSignup);
-});
-
-async function handleSignup(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    try {
-        const response = await fetch('http://localhost:3000/api/users/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ name, email, password }),
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to signup');
-        }
-
-        const result = await response.json();
-        console.log(result);
-
-        // Store user details in localStorage
-        localStorage.setItem('signedUpUser', JSON.stringify({
-            name: result.data.user.name,
-            email: result.data.user.email,
-        }));
-
-        // Redirect to the dashboard after successful signup
-        window.location.href = 'registered-users.html';
-    } catch (error) {
-        console.error('Error during signup:', error);
-    }
-}
 
 
-
-
-/*const form = document.querySelector('#sign-up-form');
+const form = document.querySelector('#sign-up-form');
 const usernameInput = document.querySelector('#username');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
@@ -156,7 +114,7 @@ function isEmailValid(email) {
 
     return reg.test(email);
 }
-*/
+
 
 
 

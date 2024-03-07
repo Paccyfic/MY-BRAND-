@@ -4,7 +4,7 @@ async function displayUsers() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                'Authorization': `Bearer ${localStorage.getItem('token')}`, // Include the user token for authentication
             },
         });
 
@@ -19,14 +19,11 @@ async function displayUsers() {
         usersData.forEach(user => {
             const row = document.createElement('tr');
 
-            // Auto-generate date based on when the user's info appeared
-            const currentDate = new Date().toLocaleDateString();
-
             // Populate table row with user data
             row.innerHTML = `
                 <td>${user.name}</td>
                 <td>${user.email}</td>
-                <td>${currentDate}</td>
+                <td>${new Date(user.createdAt).toLocaleDateString()}</td>
                 <td> 
                     <input type="submit" class="update-btn" 
                         value="Update" onclick="redirectToUpdatePage('${user._id}')">
@@ -41,39 +38,6 @@ async function displayUsers() {
         });
     } catch (error) {
         console.error('Error during fetching users:', error);
-    }
-    displaySignedUpUser();
-}
-
-function displaySignedUpUser() {
-    const signedUpUser = JSON.parse(localStorage.getItem('signedUpUser'));
-
-    if (signedUpUser) {
-        const tableBody = document.querySelector('.table tbody');
-        const row = document.createElement('tr');
-
-        // Auto-generate date based on when the user's info appeared
-        const currentDate = new Date().toLocaleDateString();
-
-        // Populate table row with signed-up user data
-        row.innerHTML = `
-            <td>${signedUpUser.name}</td>
-            <td>${signedUpUser.email}</td>
-            <td>${currentDate}</td>
-            <td> 
-                <input type="submit" class="update-btn" 
-                    value="Update" onclick="redirectToUpdatePage('${signedUpUser._id}')">
-            </td>
-            <td> 
-                <input type="submit" class="delete-btn" 
-                    value="DELETE" onclick="deleteUser('${signedUpUser._id}')">
-            </td>
-        `;
-
-        tableBody.appendChild(row);
-
-        // Clear the signedUpUser from localStorage after displaying
-        localStorage.removeItem('signedUpUser');
     }
 }
 
