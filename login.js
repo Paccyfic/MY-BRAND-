@@ -13,6 +13,97 @@ form.addEventListener('submit', async (event) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: emailInput.value,
+          password: passwordInput.value,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200) {
+        // Successful login
+        alert('Login successful!');
+
+        // Save the received token in localStorage or use it as needed
+        const token = result.data.token;
+        localStorage.setItem('token', token);
+
+        // Redirect or perform any other actions after successful login
+        window.location.href = 'index.html';
+      } else {
+        // Handle login errors
+        alert(result.message);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred during login. Please try again.');
+    }
+  }
+});
+
+function isFormValid() {
+  const inputContainers = form.querySelectorAll('.input-group');
+  let result = true;
+  inputContainers.forEach((container) => {
+    if (container.classList.contains('error')) {
+      result = false;
+    }
+  });
+  return result;
+}
+
+function validateForm() {
+  // EMAIL
+  if (emailInput.value.trim() === '') {
+    setError(emailInput, 'Provide email address');
+  } else {
+    setSuccess(emailInput);
+  }
+
+  // PASSWORD
+  if (passwordInput.value.trim() === '') {
+    setError(passwordInput, 'Password can not be empty');
+  } else {
+    setSuccess(passwordInput);
+  }
+}
+
+// ... (Remaining functions are the same)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const form = document.querySelector('#sign-up-form');
+const usernameInput = document.querySelector('#username');
+const emailInput = document.querySelector('#email');
+const passwordInput = document.querySelector('#password');
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  validateForm();
+
+  if (isFormValid()) {
+    try {
+      const response = await fetch('http://localhost:3000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
@@ -112,7 +203,7 @@ function isEmailValid(email) {
 
     return reg.test(email);
 }
-
+*/
 // ... (rest of the validation functions remain the same)
 
 
