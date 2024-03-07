@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
     try {
         // Fetch blogs from the server
-        const response = await fetch('http://localhost:3000/blogs');
+        const response = await fetch('http://localhost:3000/api/blogs/');
         const blogs = await response.json();
 
         // RENDER BLOGS
