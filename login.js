@@ -72,6 +72,30 @@ function validateForm() {
 
 // ... (Remaining functions are the same)
 
+// ... (Your existing code)
+
+function setSuccess(element) {
+    const parent = element.parentElement;
+    if (parent.classList.contains('error')) {
+        parent.classList.remove('error');
+    }
+    parent.classList.add('success');
+}
+
+function setError(element, errorMessage) {
+    const parent = element.parentElement;
+    if (parent.classList.contains('success')) {
+        parent.classList.remove('success');
+    }
+    parent.classList.add('error');
+    const paragraph = parent.querySelector('p');
+    paragraph.textContent = errorMessage;
+}
+
+function isEmailValid(email) {
+    const reg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    return reg.test(email);
+}
 
 
 
