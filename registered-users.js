@@ -4,7 +4,7 @@ async function displayUsers() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`, // Include the user token for authentication
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
             },
         });
 
@@ -19,11 +19,14 @@ async function displayUsers() {
         usersData.forEach(user => {
             const row = document.createElement('tr');
 
+            // Auto-generate date based on when the user's info appeared
+            const currentDate = new Date().toLocaleDateString();
+
             // Populate table row with user data
             row.innerHTML = `
                 <td>${user.name}</td>
                 <td>${user.email}</td>
-                <td>${new Date(user.createdAt).toLocaleDateString()}</td>
+                <td>${currentDate}</td>
                 <td> 
                     <input type="submit" class="update-btn" 
                         value="Update" onclick="redirectToUpdatePage('${user._id}')">
@@ -40,6 +43,7 @@ async function displayUsers() {
         console.error('Error during fetching users:', error);
     }
 }
+
 
 
 
