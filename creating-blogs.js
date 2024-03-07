@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener('DOMContentLoaded', async function (e) {
     e.preventDefault();
 
     const thumbnail = document.querySelector('#thumbnail');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
         const formData = new FormData(form);
 
         try {
-            const response = await fetch('http://localhost:3000/blogs', {
+            const response = await fetch('http://localhost:3000/blog', {
                 method: 'POST',
                 body: formData,
             });
@@ -45,9 +45,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
         }
     });
 });
-
-
-
 
 
 
