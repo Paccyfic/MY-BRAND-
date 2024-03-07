@@ -55,11 +55,27 @@
      height: 400px;
      background-color: rgba(0, 24, 35, 1);
      border-radius: 80px;
-     margin-top: 100px;
+     margin-top: 150px;
      margin-left: 100px;
      flex-wrap: wrap;
      box-shadow: 0px 0px 25px 3px rgb(2, 53, 77);
+     animation: floatImage 4s ease-in-out infinite;
  }
+
+ @keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+ }
+    
+ 
+
  .container {
      display: flex;
  
