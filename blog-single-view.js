@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
 function goBackToBlogs() {
   // Redirect to the blogs page
-  window.location.href = 'http://localhost:3000/blogs.html';
+  window.location.href = 'blogs.html';
 }
 
 

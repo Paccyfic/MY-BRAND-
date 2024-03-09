@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
             });
 
             if (response.ok) {
-                window.location.href = 'http://localhost:3000/blogs.html';
+                window.location.href = 'blogs.html';
             } else {
                 console.error('Error creating blog:', response.statusText);
             }
