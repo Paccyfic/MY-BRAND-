@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        const formData = new FormData(form);
+        console.log(form);
 
         try {
             const response = await fetch('http://localhost:3000/api/blogs', {
                 method: 'POST',
-                body: formData,
+                
             });
 
             if (response.ok) {
