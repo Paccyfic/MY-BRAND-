@@ -27,12 +27,19 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        console.log(form);
+        //const formData = new FormData(form);
 
         try {
             const response = await fetch('http://localhost:3000/api/blogs', {
                 method: 'POST',
-                
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    thumbnail: thumbnail.value,
+                    heading: heading.value,
+                    article: article.value,
+                }),
             });
 
             if (response.ok) {
