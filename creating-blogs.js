@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     e.preventDefault();
 
     const thumbnail = document.querySelector('#thumbnail');
-    let thumbnail_value = thumbnail.value;
     const heading = document.querySelector('#heading');
     const article = document.querySelector('#article');
 
@@ -20,26 +19,21 @@ document.addEventListener('DOMContentLoaded', async function (e) {
             img.style.height = '100%';
             thumbnail.parentElement.appendChild(img);
             thumbnail_icon.style.display = 'none';
-            thumbnail_value = reader.result;
         };
     });
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        //const formData = new FormData(form);
-
         try {
+            const formData = new FormData();
+            formData.append('title', heading.value);
+            formData.append('body', article.value);
+            formData.append('image', thumbnail.files[0]);
+
             const response = await fetch('http://localhost:3000/api/blogs', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    thumbnail: thumbnail.value,
-                    heading: heading.value,
-                    article: article.value,
-                }),
+                body: formData,
             });
 
             if (response.ok) {
@@ -52,8 +46,6 @@ document.addEventListener('DOMContentLoaded', async function (e) {
         }
     });
 });
-
-
 
 
 
