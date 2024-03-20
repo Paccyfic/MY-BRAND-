@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
             const response = await fetch('http://localhost:3000/api/blogs', {
                 method: 'POST',
-                body: formData,
+                body: JSON.stringify (formData),
             });
 
             if (response.ok) {
