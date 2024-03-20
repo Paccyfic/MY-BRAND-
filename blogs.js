@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
     // Function to fetch blogs
     const fetchBlogs = async () => {
         try {
-            const response = await fetch('https://my-brand-backend-m9p9.onrender.com/blogs');
+            const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/blogs');
             const blogs = await response.json();
 
             if (blogs.length === 0) {
