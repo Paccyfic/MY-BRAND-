@@ -26,21 +26,21 @@ document.addEventListener('DOMContentLoaded', async function (e) {
         e.preventDefault();
 
         try {
-            //const formData = new FormData();
-            //formData.append('title', heading.value);
-            //formData.append('body', article.value);
-            //formData.append('image', thumbnail.files[0]);
+            const formData = new FormData();
+            formData.append('title', heading.value);
+            formData.append('body', article.value);
+            formData.append('image', thumbnail.files[0]);
 
-            let formData = {
+           /* let formData = {
                 image: thumbnail.files[0] ,
                 heading: heading.value ,
                 body: article.value 
            
-            }
+            }*/
 
-            console.log (formData);
+            //console.log (formData);
 
-            const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/createNewBlog', {
+            const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/blogs', {
                 method: 'POST',
                 body: JSON.stringify (formData),
             });
