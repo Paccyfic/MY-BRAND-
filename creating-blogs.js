@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
             const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/blogs', {
                 method: 'POST',
-                headers: {authorization: localStorage.getItem('token')} ,
+                headers: {authorization: "bearer "+ localStorage.getItem('token')} ,
                 body: JSON.stringify (formData),
             });
 

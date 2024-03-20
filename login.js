@@ -24,14 +24,14 @@ form.addEventListener('submit', async (event) => {
 
       if (response.status === 200) {
         // Successful login
-        alert('Login successful!');
+       // alert('Login successful!');
 
         // Save the received token in localStorage or use it as needed
         const token = result.data.token;
         localStorage.setItem('token', token);
 
         // Redirect or perform any other actions after successful login
-        window.location.href = 'index.html';
+        window.location.href = 'dashboard.html';
       } else {
         // Handle login errors
         alert(result.message);
