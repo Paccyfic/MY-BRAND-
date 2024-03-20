@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
             let formData = {
                 image: thumbnail.files[0] ,
                 heading: heading.value ,
-                body: article.value , 
+                body: article.value 
            
             }
 
