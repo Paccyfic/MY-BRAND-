@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', async function (e) {
             formData.append('body', article.value);
             formData.append('image', thumbnail.files[0]);
 
+            console.log (formData);
+
             const response = await fetch('http://localhost:3000/api/blogs', {
                 method: 'POST',
                 body: JSON.stringify (formData),
