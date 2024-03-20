@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
   try {
       if (selectedBlogIndex !== null) {
           // Fetch the selected blog from the server
-          const response = await fetch(`http://localhost:3000/blogs/${selectedBlogIndex}`);
+          const response = await fetch(`https://my-brand-backend-m9p9.onrender.com/blogs/${selectedBlogIndex}`);
           const selectedBlog = await response.json();
 
           // Update single blog view with selected blog's details
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
               heartIcon.classList.toggle("liked");
 
               // Update likes on the server
-              const likeResponse = await fetch(`http://localhost:3000/blogs/${selectedBlog._id}/like`, {
+              const likeResponse = await fetch(`https://my-brand-backend-m9p9.onrender.com/blogs/${selectedBlog._id}/like`, {
                   method: 'POST',
               });
 

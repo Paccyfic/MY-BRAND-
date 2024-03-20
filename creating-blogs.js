@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
             console.log (formData);
 
-            const response = await fetch('http://localhost:3000/api/', {
+            const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/createNewBlog', {
                 method: 'POST',
                 body: JSON.stringify (formData),
             });

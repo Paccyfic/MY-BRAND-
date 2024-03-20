@@ -12,7 +12,7 @@ form.addEventListener('submit', async (event) => {
 
   if (isFormValid()) {
     try {
-      const response = await fetch('http://localhost:3000/api/users/signup', {
+      const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/users/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

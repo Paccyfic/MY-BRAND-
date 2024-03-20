@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
     try {
         // Fetch blogs from the server
-        const response = await fetch('http://localhost:3000/api/blogs/');
+        const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/blogs/');
         const blogs = await response.json();
 
         // RENDER BLOGS
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async function (e) {
 
         // DELETE BLOG FUNCTION
         window.deleteBlog = async function (blogId) {
-            const deleteResponse = await fetch(`http://localhost:3000/blogs/${blogId}`, {
+            const deleteResponse = await fetch(`https://my-brand-backend-m9p9.onrender.com/blogs/${blogId}`, {
                 method: 'DELETE',
             });
 

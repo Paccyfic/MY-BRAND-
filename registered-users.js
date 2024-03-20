@@ -1,6 +1,6 @@
 async function displayUsers() {
     try {
-        const response = await fetch('http://localhost:3000/api/users', {
+        const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/users', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ async function displayUsers() {
 
 async function displayUsers() {
     try {
-        const response = await fetch('http://localhost:3000/api/users/signup', {
+        const response = await fetch('https://my-brand-backend-m9p9.onrender.com/api/users/signup', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ async function displayUsers() {
 
 async function deleteUser(userId) {
     try {
-        const response = await fetch(`http://localhost:3000/api/users/delete/${userId}`, {
+        const response = await fetch(`https://my-brand-backend-m9p9.onrender.com/api/users/delete/${userId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
