@@ -10,6 +10,8 @@
     .helloworld {
      color: rgba(0, 255, 163, 0.45);
      font-size: 55px;
+     animation: slideBottom 1s ease forwards;
+     animation-delay: .7s;
  
     
  }
@@ -23,6 +25,8 @@
      color: rgba(255, 255, 255, 0.63);
      padding: 0%, 20px;
      text-align: left;
+     animation: slideLeft 1s ease forwards;
+     animation-delay: 1s;
  }
  /* .multiple-text {
      color: #00FEA4;
