@@ -35,6 +35,8 @@
  .words h2 {
      color: aliceblue;
      padding: 0%;
+     animation: slideTop 1s ease forwards;
+     animation-delay: .7s;
  }
  span {
      color: #00FEA4;
@@ -64,6 +66,9 @@
      flex-wrap: wrap;
      box-shadow: 0px 0px 25px 3px rgb(2, 53, 77);
      animation: floatImage 4s ease-in-out infinite;
+     opacity: 0;
+     animation: slideRight 1s ease forwards;
+     animation-delay: 1s;
  }
 
  @keyframes floatImage {
