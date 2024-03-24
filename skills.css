@@ -76,7 +76,12 @@ body {
     height: 120px;
     border-radius: 50%;
     color: white;
-    background: black linear-gradient(to right, transparent 50%, var(--clr) 0);
+    background: conic-gradient(
+        transparent calc(1% * var(--i)),
+        var(--clr) calc(1% * var(--i)),
+        var(--clr) 100%
+    );
+    /*background: black linear-gradient(to right, transparent 50%, var(--clr) 0);*/
 }
 
 .progress h4 {
@@ -114,13 +119,7 @@ body {
 .progress::before {
     background: var(--clr);
     transform: rotate(calc(((var(--i) - 50) * 0.01turn )));
-    stroke-width: 10;
-    stroke: black;
-    fill: transparent;
-    stroke-dasharray: 502;
-    stroke-dashoffset: 502;
-    stroke-linecap: round;
-    animation: animate-bar 1s linear forwards;
+    
 }
 
 /* EXPERIENCE STYLES */
