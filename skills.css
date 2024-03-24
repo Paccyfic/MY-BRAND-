@@ -76,19 +76,8 @@ body {
     height: 120px;
     border-radius: 50%;
     color: white;
-    animation: progressAnimation 1.5s ease forwards;
     background: black linear-gradient(to right, transparent 50%, var(--clr) 0);
 }
-
-@keyframes progressAnimation {
-    from {
-        transform: rotate(calc(-90deg)); /* Start from 0% */
-    }
-    to {
-        transform: rotate(calc((var(--i) * 1.8deg) - 90deg)); /* Rotate to the desired percentage */
-    }
-}
-
 
 .progress h4 {
     position: absolute;
