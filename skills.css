@@ -114,6 +114,13 @@ body {
 .progress::before {
     background: var(--clr);
     transform: rotate(calc(((var(--i) - 50) * 0.01turn )));
+    stroke-width: 10;
+    stroke: black;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
 }
 
 /* EXPERIENCE STYLES */
